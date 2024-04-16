@@ -21,4 +21,3 @@
   <material name="DaVinciGreen">    <color rgba="${DaVinciGreen}"/></material>
   <material name="DaVinciBlue">     <color rgba="${DaVinciBlue}"/></material>
 </robot>
-

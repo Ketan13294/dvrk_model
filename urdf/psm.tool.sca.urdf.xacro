@@ -2,11 +2,11 @@
 <robot name="dvrk_psm" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- This file contains different tool urdf -->
-  <xacro:include filename="$(find dvrk_model)/model/common.urdf.xacro"/>
+  <xacro:include filename="$(find dvrk_model)/urdf/common.urdf.xacro"/>
 
   <!-- sca  -->
   <xacro:macro name="psm_tool_sca" params="prefix">
-    
+
     <!-- joint 5: Outer wrist pitch joint -->
     <joint name="outer_wrist_pitch" type="revolute">
       <parent link="${prefix}tool_wrist_shaft_link"/>
@@ -22,7 +22,7 @@
         <!-- <origin rpy="0 3.1416 0" xyz="0 0 0"/> -->
         <origin rpy="1.5708 3.1416 0" xyz="0.0051 0.0032 0"/>
         <geometry>
-          <mesh filename="package://dvrk_model/meshes/psm/tool_wrist_sca_link.dae"/> 
+          <mesh filename="package://dvrk_model/meshes/psm/tool_wrist_sca_link.dae"/>
         </geometry>
       </visual>
     </link>
@@ -42,15 +42,15 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 -0.0002 -0.0025"/>
         <geometry>
-          <mesh filename="package://dvrk_model/meshes/psm/tool_wrist_sca_shaft_link.dae"/> 
+          <mesh filename="package://dvrk_model/meshes/psm/tool_wrist_sca_shaft_link.dae"/>
         </geometry>
       </visual>
     </link>
-    
+
     <!-- joint 7-0: Outer open angle 1  -->
     <joint name="jaw" type="revolute">
       <parent link="${prefix}tool_wrist_sca_shaft_link"/>
-      <child link="${prefix}tool_wrist_sca_ee_link_0"/>      
+      <child link="${prefix}tool_wrist_sca_ee_link_0"/>
       <axis xyz="0 0 1"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <limit lower="0" upper="1.5707" velocity=".4" effort="1000"/>
@@ -60,7 +60,7 @@
     <link name="${prefix}tool_wrist_sca_ee_link_0">
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
-        <geometry>          
+        <geometry>
           <box size="0 0 0" />
         </geometry>
       </visual>
@@ -113,7 +113,7 @@
       <origin rpy="0 ${PI/2} ${PI/2}" xyz="0 0.0102 0"/>
     </joint>
     <link name="${prefix}tool_tip_link"/>
-    
+
   </xacro:macro>
-  
+
 </robot>

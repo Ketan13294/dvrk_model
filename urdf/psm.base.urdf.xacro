@@ -15,11 +15,11 @@
       <visual>
         <origin rpy="1.5708 0 3.1416" xyz="0.039 -0.40788 -0.07879"/>
         <geometry>
-          <mesh filename="package://dvrk_model/meshes/psm/psm_base.dae"/>      
+          <mesh filename="package://dvrk_model/meshes/psm/psm_base.dae"/>
         </geometry>
       </visual>
     </link>
-    
+
     <!-- joint 1 -->
     <joint name="outer_yaw" type="revolute">
       <parent link="${prefix}psm_base_link"/>
@@ -35,7 +35,7 @@
       <visual>        <!-- <origin rpy="0 0 -1.5708" xyz="0.0125 0 0.1575"/> -->
         <origin rpy="3.1416 0 1.5708" xyz="0.0125 0 0.5265"/>
         <geometry>
-          <mesh filename="package://dvrk_model/meshes/psm/outer_yaw.dae"/>      
+          <mesh filename="package://dvrk_model/meshes/psm/outer_yaw.dae"/>
         </geometry>
       </visual>
     </link>
@@ -43,7 +43,7 @@
     <!-- Note: I can not put visual link here as it's parallel -->
     <!-- mechanism, so the outer_pitch_link does not have visual -->
     <!-- link, all visual links mimic outer_pitch value -->
-    
+
     <!-- joint 2: outer_pitch -->
     <joint name="outer_pitch" type="revolute">
       <parent link="${prefix}outer_yaw_link"/>
@@ -63,8 +63,8 @@
       <!-- <origin rpy="-1.5708 -1.5708 0" xyz="0 0.0295 0.1495"/> -->
       <origin rpy="-1.5708 -1.5708 0" xyz="0 0.0295 0.5185"/>
       <mimic joint="outer_pitch" multiplier="1"/>
-    </joint> 
-    
+    </joint>
+
     <!-- link 2-1: outer_pitch_back -->
     <link name="${prefix}outer_pitch_back_link">
       <visual>
@@ -167,11 +167,11 @@
       <visual>
         <origin rpy="0 0 1.5708" xyz="0 0 0.041"/>
         <geometry>
-          <mesh filename="package://dvrk_model/meshes/psm/tool_main.dae"/>      
+          <mesh filename="package://dvrk_model/meshes/psm/tool_main.dae"/>
         </geometry>
       </visual>
     </link>
-    
+
     <!-- joint 4: Outer Roll -->
     <joint name="outer_roll" type="revolute">
       <parent link="${prefix}tool_main_link"/>
@@ -186,7 +186,7 @@
       <visual>
         <origin rpy="0 0 1.5708" xyz="0 0 -0.0091"/>
         <geometry>
-          <mesh filename="package://dvrk_model/meshes/psm/tool_wrist_link.dae"/>      
+          <mesh filename="package://dvrk_model/meshes/psm/tool_wrist_link.dae"/>
         </geometry>
       </visual>
     </link>
@@ -204,10 +204,10 @@
       <visual>
         <origin rpy="1.5708 0 0" xyz="0 0.00401 0"/>
         <geometry>
-          <mesh filename="package://dvrk_model/meshes/psm/tool_wrist_shaft_link.dae"/> 
+          <mesh filename="package://dvrk_model/meshes/psm/tool_wrist_shaft_link.dae"/>
         </geometry>
       </visual>
     </link>
   </xacro:macro>
-  
+
 </robot>
