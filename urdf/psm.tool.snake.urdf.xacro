@@ -5,7 +5,7 @@
   <xacro:macro name="psm_tool_snake" params="prefix">
 
     <!-- joint 6: Outer wrist pitch1 joint -->
-    <joint name="outer_wrist_pitch1" type="revolute">
+    <joint name="wrist_pitch1" type="revolute">
       <parent link="${prefix}tool_wrist_shaft_link"/>
       <child link="${prefix}tool_snake_disc1_link"/>
       <axis xyz="0 0 1"/>
@@ -24,7 +24,7 @@
     </link>
 
     <!-- joint 7: Outer wrist yaw1 joint -->
-    <joint name="outer_wrist_yaw1" type="revolute">
+    <joint name="wrist_yaw1" type="revolute">
       <parent link="${prefix}tool_snake_disc1_link"/>
       <child link="${prefix}tool_snake_disc2_link"/>
       <axis xyz="0 0 1"/>
@@ -43,7 +43,7 @@
     </link>
 
     <!-- joint 8: Outer wrist yaw2 joint -->
-    <joint name="outer_wrist_yaw2" type="revolute">
+    <joint name="wrist_yaw2" type="revolute">
       <parent link="${prefix}tool_snake_disc2_link"/>
       <child link="${prefix}tool_snake_disc3_link"/>
       <axis xyz="0 0 1"/>
@@ -62,7 +62,7 @@
     </link>
 
     <!-- joint 9: Outer wrist pitch2 joint -->
-    <joint name="outer_wrist_pitch2" type="revolute">
+    <joint name="wrist_pitch2" type="revolute">
       <parent link="${prefix}tool_snake_disc3_link"/>
       <child link="${prefix}tool_snake_end_link"/>
       <axis xyz="0 0 1"/>

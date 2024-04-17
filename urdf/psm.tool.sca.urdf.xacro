@@ -8,7 +8,7 @@
   <xacro:macro name="psm_tool_sca" params="prefix">
 
     <!-- joint 5: Outer wrist pitch joint -->
-    <joint name="outer_wrist_pitch" type="revolute">
+    <joint name="wrist_pitch" type="revolute">
       <parent link="${prefix}tool_wrist_shaft_link"/>
       <child link="${prefix}tool_wrist_sca_link"/>
       <axis xyz="0 0 1"/>
@@ -28,7 +28,7 @@
     </link>
 
     <!-- joint 6: Outer wrist yaw joint -->
-    <joint name="outer_wrist_yaw" type="revolute">
+    <joint name="wrist_yaw" type="revolute">
       <parent link="${prefix}tool_wrist_sca_link"/>
       <child link="${prefix}tool_wrist_sca_shaft_link"/>
       <axis xyz="0 0 1"/>

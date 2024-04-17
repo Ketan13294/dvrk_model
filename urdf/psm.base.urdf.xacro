@@ -21,7 +21,7 @@
     </link>
 
     <!-- joint 1 -->
-    <joint name="outer_yaw" type="revolute">
+    <joint name="yaw" type="revolute">
       <parent link="${prefix}psm_base_link"/>
       <child link="${prefix}outer_yaw_link"/>
       <axis xyz="0 0 1"/>
@@ -45,7 +45,7 @@
     <!-- link, all visual links mimic outer_pitch value -->
 
     <!-- joint 2: outer_pitch -->
-    <joint name="outer_pitch" type="revolute">
+    <joint name="pitch" type="revolute">
       <parent link="${prefix}outer_yaw_link"/>
       <child link="${prefix}outer_pitch_link"/>
       <axis xyz="0 0 1"/>
@@ -56,13 +56,13 @@
     <link name="${prefix}outer_pitch_link"/>
 
     <!-- joint 2-1: outer_pitch_1 -->
-    <joint name="outer_pitch_1" type="continuous">
+    <joint name="pitch_1" type="continuous">
       <parent link="${prefix}outer_yaw_link"/>
       <child link="${prefix}outer_pitch_back_link"/>
       <axis xyz="0 0 1"/>
       <!-- <origin rpy="-1.5708 -1.5708 0" xyz="0 0.0295 0.1495"/> -->
       <origin rpy="-1.5708 -1.5708 0" xyz="0 0.0295 0.5185"/>
-      <mimic joint="outer_pitch" multiplier="1"/>
+      <mimic joint="pitch" multiplier="1"/>
     </joint>
 
     <!-- link 2-1: outer_pitch_back -->
@@ -76,12 +76,12 @@
     </link>
 
     <!-- joint 2-2: outer_pitch_2 -->
-    <joint name="outer_pitch_2" type="continuous">
+    <joint name="pitch_2" type="continuous">
       <parent link="${prefix}outer_yaw_link"/>
       <child link="${prefix}outer_pitch_front_link"/>
       <axis xyz="0 0 1"/>
       <origin rpy="-1.5708 -1.5708 0" xyz="0 0.0295 0.4285"/>
-      <mimic joint="outer_pitch" multiplier="1"/>
+      <mimic joint="pitch" multiplier="1"/>
     </joint>
 
     <!-- link 2-2: outer_pitch_front -->
@@ -95,12 +95,12 @@
     </link>
 
     <!-- joint 2-3: outer_pitch_3 -->
-    <joint name="outer_pitch_3" type="continuous">
+    <joint name="pitch_3" type="continuous">
       <parent link="${prefix}outer_pitch_back_link"/>
       <child link="${prefix}outer_pitch_bottom_link"/>
       <axis xyz="0 0 1"/>
       <origin rpy="0 0 0" xyz="0.04178 0.15007 -0.0137"/>
-      <mimic joint="outer_pitch" multiplier="-1"/>
+      <mimic joint="pitch" multiplier="-1"/>
     </joint>
 
     <!-- link 2-3: outer_pitch_bottom -->
@@ -114,12 +114,12 @@
     </link>
 
     <!-- joint 2-4: outer_pitch_4 -->
-    <joint name="outer_pitch_4" type="continuous">
+    <joint name="pitch_4" type="continuous">
       <parent link="${prefix}outer_pitch_back_link"/>
       <child link="${prefix}outer_pitch_top_link"/>
       <axis xyz="0 0 1"/>
       <origin rpy="0 0 0" xyz="0.04209 0.18695 -0.02412"/>
-      <mimic joint="outer_pitch" multiplier="-1"/>
+      <mimic joint="pitch" multiplier="-1"/>
     </joint>
 
     <!-- link 2-4: outer_pitch_top -->
@@ -133,12 +133,12 @@
     </link>
 
     <!-- joint 2-5: outer_pitch_5 -->
-    <joint name="outer_pitch_5" type="continuous">
+    <joint name="pitch_5" type="continuous">
       <parent link="${prefix}outer_pitch_bottom_link"/>
       <child link="${prefix}outer_insertion_link"/>
       <axis xyz="0 0 1"/>
       <origin rpy="0 0 0" xyz="-0.520 0 -0.0155"/>
-      <mimic joint="outer_pitch" multiplier="1"/>
+      <mimic joint="pitch" multiplier="1"/>
     </joint>
 
     <!-- link 2-5: outer_insertion -->
@@ -152,7 +152,7 @@
     </link>
 
     <!-- joint 3: insertion -->
-    <joint name="outer_insertion" type="prismatic">
+    <joint name="insertion" type="prismatic">
       <!-- <parent link="${prefix}outer_insertion_link"/> -->
       <!-- <parent link="${prefix}psm_base_link"/> -->
       <parent link="${prefix}outer_pitch_link"/>
@@ -173,7 +173,7 @@
     </link>
 
     <!-- joint 4: Outer Roll -->
-    <joint name="outer_roll" type="revolute">
+    <joint name="roll" type="revolute">
       <parent link="${prefix}tool_main_link"/>
       <child link="${prefix}tool_wrist_link"/>
       <axis xyz="0 0 1"/>
@@ -192,7 +192,7 @@
     </link>
 
     <!-- joint 4-1: outer roll shaft joint FIXED-->
-    <joint name="outer_roll_shaft" type="fixed">
+    <joint name="roll_shaft" type="fixed">
       <parent link="${prefix}tool_wrist_link"/>
       <child link="${prefix}tool_wrist_shaft_link"/>
       <axis xyz="0 0 1"/>
