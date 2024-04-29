@@ -13,7 +13,7 @@ else (catkin_FOUND)
   find_package (ament_cmake QUIET)
   if (ament_cmake_FOUND)
 
-    set (_to_be_installed meshes urdf ros2/rviz ros2/launch)
+    set (_to_be_installed meshes urdf ros2/rviz ros2/launch ros2/ros2_control)
 
     foreach (_dir ${_to_be_installed})
       install (DIRECTORY
